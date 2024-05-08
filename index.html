@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta content="Eugenia Godino" name="author">
@@ -7,21 +8,38 @@
     <meta content="html, css, grafica, analisis matematico, funciones" name="keywords">
     <title>Graph Wave</title>
 </head>
+
 <body>
     <header>
         <h1>GRAPH WAVE</h1>
     </header>
     <div>
-    <h3>Antes de empezar necesitamos algunos datos</h3>
-    <form name="formularioInscripcion" id="formulario">
+        <h3>Antes de empezar necesitamos algunos datos</h3>
+        <form name="formularioInscripcion" id="formulario">
+            <p>
+                <label for="nombre">nombre</label><input type="text" name="nombre" id="nombre" placeholder="nombre"></input>
+            </p>
+            <p>
+                profesion
+                <label for="profesor">profesor</label><input type="radio" name="profesion" value="profesor" id="masculino"></input>
+                <label for="estudiante">estudiante</label><input type="radio" name="profesion" value="estudiante" id="estudiante"></input>
+            </p>
+            <p>muchas gracias</p>
+            <a href="principal.html" target="_self">
+                <button>continuar</button>
+            </a>
+        </form>
+    <footer>
         <p>
-            <label for="nombre">nombre</label><input type="text" name="nombre" id="nombre" placeholder="nombre"></input>
+            Gracias por elegir Graph Wave
         </p>
         <p>
-            profesion 
-            <label for="profesor">profesor</label><input type="radio" name="profesion" value="profesor" id="masculino"></input>
-            <label for="estudiante">estudiante</label><input type="radio" name="profesion" value="estudiante" id="estudiante"></input>
-        </p> 
-    </form>
+            Eugenia Godino
+        </p>
+        <p>
+            Andres Garcia Villanueva
+        </p>
+    </footer>
 </body>
+
 </html>
