@@ -7,6 +7,8 @@
     <meta content="Andres Garcia Villanueva" name="author">
     <meta content="html, css, grafica, analisis matematico, funciones" name="keywords">
     <link rel="shortcut icon" href="imagenes/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" type="text/css">
+
     <title>Graph Wave</title>
 </head>
 
@@ -14,21 +16,26 @@
     <header>
         <h1>GRAPH WAVE</h1>
     </header>
-    <div>
-        <h3>Antes de empezar necesitamos algunos datos</h3>
+    <div class="index">
+        <h2>antes de empezar necesitamos algunos datos</h2>
         <form name="formulario de Inscripcion" id="formulario">
-            <p>
-                <label for="nombre">nombre</label>
+            <div>
+                <label for="nombre"></label>
                 <input type="text" name="nombre" id="nombre" placeholder="nombre" size="10" max="20"></input>
-            </p>
-            <p>
-                profesion
-                <label for="profesor">profesor</label><input type="radio" name="profesion" value="profesor" id="profesor"></input>
-                <label for="estudiante">estudiante</label><input type="radio" name="profesion" value="estudiante" id="estudiante"></input>
-            </p>
-            <p>muchas gracias</p>
-            <a href="principal.html" target="_self">continuar</a>
+            </div>
+            <div>
+                <p>profesion</p>
+                <label for="profesor">profesor</label><input type="radio" name="profesion" value="profesor"
+                    id="profesor"></input>
+                <label for="estudiante">estudiante</label><input type="radio" name="profesion" value="estudiante"
+                    id="estudiante"></input>
+            </div>
+
+            <p id="muchas_gr">muchas gracias</p>
+
+            <a href="principal.html" target="_self" id="continuar">continuar</a>
         </form>
+    </div>
     <footer>
 
         <p>
@@ -39,4 +46,5 @@
         </p>
     </footer>
 </body>
+
 </html>
