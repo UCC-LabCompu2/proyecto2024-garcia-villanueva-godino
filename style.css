@@ -16,7 +16,7 @@ header {
     transform: translateY(-6px)scale(1, 1);
 }
 
-.index {
+.estilo {
     background: rgba(255, 255, 255, .1);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     border: 2px solid rgba(255, 255, 255, .2);
@@ -37,7 +37,7 @@ header {
     color: hsl(182, 25%, 50%);
 }
 
-#continuar {
+.boton {
     text-align: center;
     padding: 20px 30px;
     display: inline-block;
@@ -54,7 +54,7 @@ header {
     margin-left: 102px;
 }
 
-#continuar:hover {
+.boton:hover {
     background-color: #545454;
 }
 
@@ -70,4 +70,40 @@ footer{
     padding-bottom: 10px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS';
     letter-spacing: 2px;
+}
+
+.variable{
+    display: block;
+    margin-bottom: 20px;
+}
+input[type="number"]{
+    margin-right: 150px;
+    margin-bottom: 20px;
+}
+
+.calculo{
+    padding-top: 20px;
+    column-count: 2;
+    column-gap: 50px;
+}
+.img_garfico{
+    padding-left: 800px;
+    padding-bottom: 100px;
+}
+.boton_calculo{
+    padding-top: 500px;
+}
+#grafico{
+    font-family: 'Noto Sans';
+    padding: 1em;
+    margin-left: 470px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+#rango{
+    width: 300px;
+    padding-left: 10px;
+}
+.img_escala{
+   margin-left: 1000px;
 }
