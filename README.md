@@ -4,10 +4,10 @@
 
 ## Indice
 - [Link](#Link)
-- [Auotores](#Autores)
-- [Descripción(#Descripción)
-- [Uso ](#Uso)
-- [Teconologías](#Tecnologías)
+- [Autores](#Autores)
+- [Descripción](#Descripción)
+- [Uso](#Uso)
+- [Tecnologías](#Tecnologías)
 
 ## Link 
 
@@ -33,7 +33,7 @@ https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 ## Uso
 - En Graph Wave se le va a pedir al usuario que ingrese los términos que acompañan a las variables de su función, tanto en R2 como en R3, a partir de los cuales la página le mostrará las raíces, la ordenada al origen y el gráfico correspondientes a la función ingresada. 
  
-## Teconologías
+## Tecnologías
 ### Tecnologías empleadas
 Para el desarrollo de la pagina utilizamos: 
 
