@@ -1,5 +1,9 @@
 # Proyecto 2024 Lab. de Conputacion II
 
+##Profesor
+
+Aliciardi, Agustina
+
 # Graph Wave  
 
 ## Indice
