@@ -1,4 +1,10 @@
 # Proyecto 2024 Lab. de Conputacion II
+
+## Indice
+- [Link](#Link)
+- [Auotores](#Autores)
+- [Descripción](#Descripción)
+- [Teconologías](#Tcnologías)
 ## Graph Wave  
 
 link de la pagina por GitHub Pages 
@@ -24,6 +30,9 @@ https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 
 ## Teconologías empleadas 
 Para el desarrollo de la pagina utilizamos: 
-1- Figma para los wirefram tanto de PC como para mobile 
-2- Visual Studio Code para programas el código en html y css
 
+. Figma para los wirefram tanto de PC como para mobile 
+
+. Visual Studio Code para programas el código en html y css
+
+. HTML Color Codeas para encontrar los colores empleados en el css
