@@ -100,6 +100,9 @@ section{
 .califica{
     text-align: center;
 }
+.boton_califica{
+    margin-right: 50px;
+}
 #rango{
     margin-right: 10px;
     margin-bottom: 20px;
