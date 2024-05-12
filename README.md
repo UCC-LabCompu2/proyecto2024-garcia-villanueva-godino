@@ -6,6 +6,7 @@
 - [Link](#Link)
 - [Auotores](#Autores)
 - [Descripción de la página](#Descripción)
+- [Uso ](#Uso)
 - [Teconologías empleadas](#Tecnologías)
 
 ## Link 
@@ -17,7 +18,7 @@ https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 
 ## Autores
 * Ma. Eugenia  **Godino**
-* Andres **Garcias Villanueva**
+* Andres **Garcia Villanueva**
 
 | Emails | Autores |
 |--------|---------|
@@ -26,16 +27,18 @@ https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 
 
 ## Descripción
-- GraphWave, nuestro proyecto de la materia es una pagina web que le permite ingresar al usuario los términos que aconpañan las variables de una función tanto en R2 como en R3, la pagina le proporciona al usuario las raíces de la función, su ordenadas al origen y por último su gráfico correspondiente 
+- Graph Wave le permite ingresar al usuario los términos que aconpañan las variables de una función y la pagina principalmente le proporcionará el gráfico correspondiente. 
 
-- En la página se encuentra un ejemplo de como se vería antes de aprender Java
+- En la página se encuentra un ejemplo de como se vería antes de aprender Java Script
 
-
+## Uso
+- En Graph Wave se le va a pedir al usuario que ingerese los términos que acompañan a las variables de su función, tanto en R2 como en R3, a partir de los culaes la página le mostrará ñas raíces, la ordenada al origen y el gráfico correspondientes a la función ingresada. 
+ 
 ## Teconologías
 Para el desarrollo de la pagina utilizamos: 
 
-. Figma para los wirefram tanto de PC como para mobile 
+. Figma para los wirefram tanto de PC como para mobile.
 
-. Visual Studio Code para programas el código en html y css
+. Visual Studio Code para programas el código en html y css.
 
-. HTML Color Codeas para encontrar los colores empleados en el css
+. HTML Color Codeas para encontrar los colores empleados en el css.
