@@ -1,18 +1,21 @@
 # Proyecto 2024 Lab. de Conputacion II
 
+# Graph Wave  
+
 ## Indice
 - [Link](#Link)
 - [Auotores](#Autores)
-- [Descripción](#Descripción)
-- [Teconologías](#Tcnologías)
-## Graph Wave  
+- [Descripción de la página](#Descripción)
+- [Teconologías empleadas](#Tecnologías)
 
-link de la pagina por GitHub Pages 
+## Link 
+
+Este es el link de nuestra páginas desde GitHub Pages
 
 https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 
 
-### Autores
+## Autores
 * Ma. Eugenia  **Godino**
 * Andres **Garcias Villanueva**
 
