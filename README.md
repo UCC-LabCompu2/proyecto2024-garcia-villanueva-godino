@@ -5,8 +5,8 @@
 ## Indice
 - [Link](#Link)
 - [Auotores](#Autores)
-- [Descripción](#Descripción de la página)
-- [Teconologías](#Tecnologías empleadas)
+- [Descripción de la página](#Descripción)
+- [Teconologías empleadas](#Tecnologías)
 
 ## Link 
 
@@ -25,13 +25,13 @@ https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 | 2320413@ucc.edu.ar | Andres |
 
 
-## Descripción de la página
+## Descripción
 - GraphWave, nuestro proyecto de la materia es una pagina web que le permite ingresar al usuario los términos que aconpañan las variables de una función tanto en R2 como en R3, la pagina le proporciona al usuario las raíces de la función, su ordenadas al origen y por último su gráfico correspondiente 
 
 - En la página se encuentra un ejemplo de como se vería antes de aprender Java
 
 
-## Teconologías empleadas 
+## Teconologías
 Para el desarrollo de la pagina utilizamos: 
 
 . Figma para los wirefram tanto de PC como para mobile 
