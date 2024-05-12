@@ -5,8 +5,8 @@
 ## Indice
 - [Link](#Link)
 - [Auotores](#Autores)
-- [Descripción de la página](#Descripción)
-- [Teconologías empleadas](#Tecnologías)
+- [Descripción](#Descripción de la página)
+- [Teconologías](#Tecnologías empleadas)
 
 ## Link 
 
