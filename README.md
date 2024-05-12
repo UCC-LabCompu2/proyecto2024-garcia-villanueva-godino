@@ -1,6 +1,6 @@
 # Proyecto 2024 Lab. de Conputacion II
 
-##Profesor
+## Profesor
 
 Aliciardi, Agustina
 
