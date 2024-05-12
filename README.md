@@ -24,6 +24,6 @@ https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 
 ## Teconologías empleadas 
 Para el desarrollo de la pagina utilizamos: 
-. Figma para los wirefram tanto de PC como para mobile 
-. Visual Studio Code para programas el código en html y css
+1- Figma para los wirefram tanto de PC como para mobile 
+2- Visual Studio Code para programas el código en html y css
 
