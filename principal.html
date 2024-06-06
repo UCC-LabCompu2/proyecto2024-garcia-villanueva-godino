@@ -8,6 +8,7 @@
     <meta content="grafico de funciones con valores ingresados por el usuario" name="description">
     <link rel="shortcut icon" href="imagenes/favicon1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css" text="">
+    <script type="text/javascript" src="function.js"></script>
     <title>Graph Wave</title>
 </head>
 <body>
@@ -19,16 +20,14 @@
         <form action="formulario Datos para calculo" id="formulario">
             <div class="rango">
                 <p>rango de la funcion:</p>
-                <label for="R2">R2 (dos variables)</label><input type="radio" name="rango" value="R2" id="R2" >
-                <label for="R3">R3 (tres variables)</label><input type="radio" name="rango" value="R3" id="R3">
+                <button name="rango" value="R2" id="R2" type="button">R2 (dos variables)</button>
+                <button name="rango" value="R3" id="R3" type="button" onclick="alert('Lo sentimos esta función no esta lista todavía')">R3 (tres variables)</button>
             </div>
-            <div>
+            <div >
                 <p>ingrese datos de las variables:</p>
-                <label for="a">coeficiente cuadrático</label><input type="number" name="variable" id="a" min="-10"
+                <label for="a">coeficiente lineal</label><input type="number" name="variable" id="a" min="-10"
                     maxlength="10">
-                <label for="b">coeficiente lineal</label><input type="number" name="variable" id="b" min="-10"
-                    maxlength="10">
-                <label for="c">término independiente</label><input type="number" name="variable" id="c" min="-10"
+                <label for="b">término independiente</label><input type="number" name="variable" id="b" min="-10"
                     maxlength="10">
             </div>
             <a href="calculo.html" target="_self" class="boton">calcular</a>
