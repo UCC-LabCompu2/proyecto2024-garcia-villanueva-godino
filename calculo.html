@@ -7,28 +7,31 @@
     <meta content="html, css, grafica, analisis matematico, funciones" name="keywords">
     <meta content="grafico de funciones con valores ingresados por el usuario" name="description">
     <link rel="shortcut icon" href="imagenes/favicon1.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="function.js"></script>
     <title>Graph Wave</title>
 </head>
-<body>
+<body onload="mostrarResultados()">
     <header>
         <h1>GRAPH WAVE</h1>
     </header>
     <div class="calculo">
-        <div class="estilo" onload="mostrarResultados()">
+        <div class="estilo">
             <ul>
                 <p>Resultados</p>
-                <p>f(x)=<span id="pendiente"></span></p>
+                <p>f(x) = <span id="pendiente"></span>x + <span id="termino_independiente"></span></p>
+                <p>Raíz: <span id="raiz"></span></p>
+                <p>Ordenada al origen: <span id="ordenada"></span></p>
             </ul>
         </div>
-            <p id="grafico">Grafico de la funcion f(x)</p>
-            <section>
-                <img src="imagenes/grafico_ej.jpg" alt="ejemplo_graf" id="img_grafico">
-                <canvas id="canvas" width="200px" height="200px"></canvas>
-            </section>
+        <p id="grafico">Gráfico de la función f(x)</p>
+        <section>
+            <button onclick="dibujarGrafico()" id="boton_canvas">dibujar grafico</button>
+            <canvas id="canvas" width="1000px" height="600px" ></canvas>
+        </section>
         <div class="boton_calculo">
-            <a href="principal.html" target="_self" class="boton">atrás</a>
-            <a href="califica.html" target="_self" class="boton">finalizar</a>
+            <a href="principal.html" class="boton">Atrás</a>
+            <a href="califica.html" class="boton">Finalizar</a>
         </div>
     </div>
     <footer>
@@ -36,5 +39,4 @@
         <p>Andres Garcia Villanueva</p>
     </footer>
 </body>
-
 </html>
