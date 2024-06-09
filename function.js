@@ -1,3 +1,17 @@
+const validar = () => {
+    const a = parseFloat(document.getElementById("a").value);
+    const b = parseFloat(document.getElementById("b").value);
+
+    if (a>11 || b>11){
+        alert("Los numeos ingresados son demasiado grandes")
+    } else if (a<-11 || b<-11 ) {
+        alert("Los numeros ingresados son demasiados chicos")
+    } else {
+        guardarValores();
+    }
+    
+}
+
 const guardarValores = () => {
     const a = document.getElementById('a').value;
     const b = document.getElementById('b').value;
@@ -7,6 +21,7 @@ const guardarValores = () => {
 window.onload = () => {
     guardarValores(); 
 }
+
 const mostrarResultados = () => {
     const a = parseFloat(localStorage.getItem('a'));
     const b = parseFloat(localStorage.getItem('b'));
@@ -113,4 +128,4 @@ const dibujarGrafico = () => {
     }
     ctx.stroke();
     ctx.closePath();
-};
+}
