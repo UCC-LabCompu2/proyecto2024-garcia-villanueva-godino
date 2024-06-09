@@ -1,8 +1,13 @@
+/**
+ * validar la entrada de valores antes de calcular 
+ * @method validar
+ * @returns valor de tipo bool
+ */
 const validar = () => {
     const a = document.getElementById("a").value;
     const b = document.getElementById("b").value;
 
-    if (a === "" || b === "") {
+    if (a === "" || b === "" || nombre === "") {
         alert("Todos los campos deben estar completados");
         return false;
     }
@@ -21,39 +26,62 @@ const validar = () => {
     return true;
 }
 
+/**
+ * guardar los valores ingresados por el usuario una vez ya validados
+ * @method guardarValores
+ */
 const guardarValores = () => {
     const a = document.getElementById('a').value;
     const b = document.getElementById('b').value;
     localStorage.setItem('a', a);
     localStorage.setItem('b', b);
-}
-window.onload = () => {
-    guardarValores(); 
+
+    window.onload = guardarValores();
 }
 
+/**
+ * retoma los valores ingresados por el usuario y accede a los calculos
+ * @method mostrarResultados
+ */
 const mostrarResultados = () => {
     const a = parseFloat(localStorage.getItem('a'));
     const b = parseFloat(localStorage.getItem('b'));
     document.getElementById('pendiente').textContent = a;
     document.getElementById('termino_independiente').textContent = b;
 
-    const ordenadaAlOrigen = calcularOrdenadaAlOrigen(b);
-    document.getElementById('ordenada').textContent = ordenadaAlOrigen;
+    const ordenada = calcularOrdenada(b);
+    document.getElementById('ordenada').textContent = ordenada;
 
     const raiz = calcularRaiz(a, b);
     document.getElementById('raiz').textContent = raiz;
 }
 
-const calcularOrdenadaAlOrigen = (b) => {
+/**
+ * calcular la ordenada al origen
+ * @method calcularOrdenada
+ * @param {number} b valor del término independiente
+ * @returns ordenada al origen de la funcion
+ */
+const calcularOrdenada = (b) => {
     return b;
 }
 
+/**
+ * caluclar la raiz
+ * @param {number} a valor del término lineal
+ * @param {number} b valor del término independiente
+ * @returns raiz de la funcion
+ */
 const calcularRaiz = (a, b) => {
     return -b / a;
 }
 
 window.onload = mostrarResultados;
 
+/**
+ * dibuja la cuadricula del canvas y los ejes cartesianos una vez presionado el botón
+ * @method dibujarCuadriculado
+ */
 let dibujarCuadriculado = () => {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
@@ -80,21 +108,25 @@ let dibujarCuadriculado = () => {
     }
 
     ctx.beginPath()
-    ctx.moveTo(0, ymax/2)
-    ctx.lineTo(xmax, ymax/2)
+    ctx.moveTo(0, ymax / 2)
+    ctx.lineTo(xmax, ymax / 2)
     ctx.strokeStyle = "#000000"
     ctx.stroke()
     ctx.closePath()
 
     ctx.beginPath()
-    ctx.moveTo(xmax/2, 0)
-    ctx.lineTo(xmax/2, ymax)
+    ctx.moveTo(xmax / 2, 0)
+    ctx.lineTo(xmax / 2, ymax)
     ctx.strokeStyle = "#000000"
     ctx.stroke()
     ctx.closePath()
 
 }
 
+/**
+ * dibuja la recta que representa a la función 
+ * @method dibujarGrafico
+ */
 const dibujarGrafico = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -104,7 +136,7 @@ const dibujarGrafico = () => {
     const ymax = canvas.height;
 
     const minX = -10;
-    const maxX = 10; 
+    const maxX = 10;
 
     const minY = -10;
     const maxY = 10;
