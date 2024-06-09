@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +8,7 @@
     <meta content="html, css, grafica, analisis matematico, funciones" name="keywords">
     <meta content="grafico de funciones con valores ingresados por el usuario" name="description">
     <link rel="shortcut icon" href="imagenes/favicon1.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css" text="">
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="function.js"></script>
     <title>Graph Wave</title>
 </head>
@@ -17,20 +18,20 @@
     </header>
     <div class="estilo">
         <h2>Necesitamos algunos datos para realizar los cálculos necesarios</h2>
-        <form action="formulario Datos para calculo" id="formulario">
+        <form id="formulario">
             <div class="rango">
-                <p>rango de la funcion:</p>
-                <button name="rango" value="R2" id="R2" type="button">R2 (dos variables)</button>
-                <button name="rango" value="R3" id="R3" type="button" onclick="alert('Lo sentimos esta función no esta lista todavía')">R3 (tres variables)</button>
+                <p>Rango de la función:</p>
+                <button type="button">R2 (dos variables)</button>
+                <button type="button" onclick="alert('Lo sentimos, esta función no está lista todavía')">R3 (tres variables)</button>
             </div>
-            <div >
-                <p>ingrese datos de las variables:</p>
-                <label for="a">coeficiente lineal</label><input type="number" name="variable" id="a" min="-10"
-                    maxlength="10">
-                <label for="b">término independiente</label><input type="number" name="variable" id="b" min="-10"
-                    maxlength="10">
+            <div>
+                <p>Ingrese datos de las variables:</p>
+                <label for="a">Coeficiente lineal</label>
+                <input type="number" id="a" min="-10" max="10">
+                <label for="b">Término independiente</label>
+                <input type="number" id="b" min="-10" max="10">
             </div>
-            <a href="calculo.html" target="_self" class="boton" onclick="calcular()" value="click">calcular</a>
+            <a href="calculo.html" class="boton" onclick="guardarValores()">Calcular</a>
         </form>
     </div>
     <footer>
@@ -39,3 +40,4 @@
     </footer>
 </body>
 </html>
+
