@@ -24,7 +24,8 @@ header {
     margin-top: 50px;
     margin-bottom: 50px;
 }
-footer{
+
+footer {
     font-size: 15px;
     margin-top: 30px;
     background-color: #1ABC9C;
@@ -37,11 +38,13 @@ footer{
     background-image: url('imagenes/footer_img.jpg');
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 200px 200px; 
+    background-size: 200px 200px;
 }
-footer:hover{
+
+footer:hover {
     background-color: #0E6655;
 }
+
 .boton {
     text-align: center;
     padding: 20px 30px;
@@ -58,12 +61,15 @@ footer:hover{
     font-size: 15px;
     margin-left: 102px;
 }
+
 .boton:hover {
     background-color: #545454;
 }
+
 #nombre {
     font-size: 15px;
 }
+
 #muchas_gr {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
     text-align: center;
@@ -71,42 +77,52 @@ footer:hover{
     letter-spacing: 5px;
     color: hsl(182, 25%, 50%);
 }
-input[type="number"]{
+
+input[type="number"] {
     margin-right: 170px;
     margin-bottom: 20px;
 }
-#rango{
+
+#rango {
     width: 300px;
     padding-left: 10px;
 }
-.calculo{
+
+.calculo {
     display: inline;
     margin-top: 50px;
 }
-section{
+
+section {
     padding-bottom: 100px;
     margin-left: 500px;
 }
-.boton_calculo{
+
+.boton_calculo {
     margin-top: 100px;
     margin-bottom: 100px;
 }
-#grafico{
+
+#grafico {
     font-family: 'Noto Sans';
     padding: 1em;
     margin-left: 470px;
     margin-bottom: 100px;
 }
-.califica{
+
+.califica {
     text-align: center;
 }
-.boton_califica{
+
+.boton_califica {
     margin-right: 50px;
 }
-#rango{
+
+#rango {
     margin-right: 10px;
     margin-bottom: 20px;
 }
+
 #canvas {
     width: 600px;
     height: 400px;
@@ -131,6 +147,7 @@ section{
 #boton_canvas:hover {
     background-color: #545454;
 }
+
 #boton_ {
     padding: 10px 20px;
     background-color: white;
@@ -144,6 +161,7 @@ section{
     font-size: 12px;
     margin-bottom: 50px;
 }
-#boton_:hover{
+
+#boton_:hover {
     background-color: #545454;
 }
