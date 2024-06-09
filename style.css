@@ -131,3 +131,19 @@ section{
 #boton_canvas:hover {
     background-color: #545454;
 }
+#boton_ {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: 'Ubuntu Sans Mono';
+    font-size: 12px;
+    margin-bottom: 50px;
+}
+#boton_:hover{
+    background-color: #545454;
+}
