@@ -1,15 +1,24 @@
 const validar = () => {
-    const a = parseFloat(document.getElementById("a").value);
-    const b = parseFloat(document.getElementById("b").value);
+    const a = document.getElementById("a").value;
+    const b = document.getElementById("b").value;
 
-    if (a>11 || b>11){
-        alert("Los numeos ingresados son demasiado grandes")
-    } else if (a<-11 || b<-11 ) {
-        alert("Los numeros ingresados son demasiados chicos")
-    } else {
-        guardarValores();
+    if (a === "" || b === "") {
+        alert("Todos los campos deben estar completados");
+        return false;
     }
-    
+
+    const numA = parseFloat(a);
+    const numB = parseFloat(b);
+
+    if (numA < -10 || numA > 10 || numB < -10 || numB > 10) {
+        alert("Los valores ingresados deben estar dentro del rango");
+        document.getElementById("a").value = "";
+        document.getElementById("b").value = "";
+        return false;
+    }
+
+    guardarValores();
+    return true;
 }
 
 const guardarValores = () => {
@@ -46,7 +55,7 @@ const calcularRaiz = (a, b) => {
 window.onload = mostrarResultados;
 
 let dibujarCuadriculado = () => {
-    const canvas = document.getElementById("myCanvas")
+    const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
 
     const xmax = canvas.width
@@ -129,3 +138,4 @@ const dibujarGrafico = () => {
     ctx.stroke();
     ctx.closePath();
 }
+
