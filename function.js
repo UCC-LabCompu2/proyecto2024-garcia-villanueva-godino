@@ -186,10 +186,6 @@ const dibujarGrafico = () => {
     }
     ctx.stroke();
     ctx.closePath();
-
-    ctx.fillStyle = "red";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
     
 }
 
