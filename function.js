@@ -54,8 +54,8 @@ const mostrarResultados = () => {
     const raiz = calcularRaiz(a, b);
     document.getElementById('raiz').textContent = raiz;
 
-    if (a === 0){
-        document.getElementById("raiz").textContent="no tiene raiz";
+    if (a === 0) {
+        document.getElementById("raiz").textContent = "no tiene raiz";
     }
 
 }
@@ -184,7 +184,7 @@ const dibujarGrafico = () => {
     }
     ctx.stroke();
     ctx.closePath();
-    
+
 }
 
 
