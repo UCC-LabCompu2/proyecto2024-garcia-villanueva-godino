@@ -125,18 +125,6 @@ let dibujarCuadriculado = () => {
     ctx.stroke()
     ctx.closePath()
 
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "black";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-
-    for (let i = paso; i < xmax; i += paso) {
-        ctx.fillText((i - xmax / 2) / paso * 10, i, ymax / 2 + 20);
-    }
-
-    for (let i = paso; i < ymax; i += paso) {
-        ctx.fillText((ymax / 2 - i) / paso * 10, xmax / 2 - 20, i);
-    }
 }
 
 /**
@@ -184,6 +172,23 @@ const dibujarGrafico = () => {
     }
     ctx.stroke();
     ctx.closePath();
+
+    const raiz = -b / a;
+    const ordenada = b;      
+
+    ctx.fillStyle = "black";
+
+        const xCanvas = (raiz - minX) * escalaX;
+        ctx.beginPath();
+        ctx.arc(xCanvas, ymax / 2, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
+
+        const yCanvas = ymax - (ordenada - minY) * escalaY;
+        ctx.beginPath();
+        ctx.arc(xmax / 2, yCanvas, 5, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.closePath();
 
 }
 
