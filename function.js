@@ -190,18 +190,7 @@ const dibujarGrafico = () => {
     ctx.fillStyle = "red";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-
-    const ordenada = b;
-    if (ordenada >= minY && ordenada <= maxY) {
-        const yCanvas = ymax - (ordenada - minY) * escalaY;
-        ctx.fillText(`(0, ${ordenada.toFixed(1)})`, xmax / 2 + 40, yCanvas);
-    }
-
-    const raiz = -b / a;
-    if (raiz >= minX && raiz <= maxX) {
-        const xCanvas = (raiz - minX) * escalaX;
-        ctx.fillText(`(${raiz.toFixed(1)}, 0)`, xCanvas, ymax / 2 - 20);
-    }
+    
 }
 
 
