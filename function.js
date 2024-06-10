@@ -145,6 +145,10 @@ let dibujarCuadriculado = () => {
     }
 }
 
+/**
+ * dibuja el grafico de la funcion correspondiete a los datos ingresados por el usuario
+ * @method dibujarGrafico
+ */
 const dibujarGrafico = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
