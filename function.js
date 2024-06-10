@@ -7,7 +7,7 @@ const validar = () => {
     const a = document.getElementById("a").value;
     const b = document.getElementById("b").value;
 
-    if (a === "" || b === "" || nombre === "") {
+    if (a === "" || b === "") {
         alert("Todos los campos deben estar completados");
         return false;
     }
@@ -19,7 +19,11 @@ const validar = () => {
         alert("Los valores ingresados deben estar dentro del rango");
         document.getElementById("a").value = "";
         document.getElementById("b").value = "";
+        document.getElementById("calcular").style.display = "none";
         return false;
+    }
+    if (numA >= -10) {
+        document.getElementById("calcular").style.display = "inline-block";
     }
 
     guardarValores();
@@ -54,6 +58,11 @@ const mostrarResultados = () => {
 
     const raiz = calcularRaiz(a, b);
     document.getElementById('raiz').textContent = raiz;
+
+    if (a === 0){
+        document.getElementById("raiz").textContent="no tiene raiz";
+    }
+
 }
 
 /**
@@ -82,13 +91,14 @@ window.onload = mostrarResultados;
  * dibuja la cuadricula del canvas y los ejes cartesianos una vez presionado el botón
  * @method dibujarCuadriculado
  */
+
 let dibujarCuadriculado = () => {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
 
     const xmax = canvas.width
     const ymax = canvas.height
-    const paso = 40
+    const paso = 80
 
     ctx.strokeStyle = "#bbb9b9"
 
@@ -103,7 +113,7 @@ let dibujarCuadriculado = () => {
     for (let i = paso; i < xmax; i += paso) {
         ctx.beginPath()
         ctx.moveTo(i, 0)
-        ctx.lineTo(i, xmax)
+        ctx.lineTo(i, ymax)
         ctx.stroke()
     }
 
@@ -121,12 +131,20 @@ let dibujarCuadriculado = () => {
     ctx.stroke()
     ctx.closePath()
 
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    for (let i = paso; i < xmax; i += paso) {
+        ctx.fillText((i - xmax / 2) / paso * 10, i, ymax / 2 + 20);
+    }
+
+    for (let i = paso; i < ymax; i += paso) {
+        ctx.fillText((ymax / 2 - i) / paso * 10, xmax / 2 - 20, i);
+    }
 }
 
-/**
- * dibuja la recta que representa a la función 
- * @method dibujarGrafico
- */
 const dibujarGrafico = () => {
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -151,7 +169,6 @@ const dibujarGrafico = () => {
 
     ctx.clearRect(0, 0, xmax, ymax);
 
-
     dibujarCuadriculado();
 
     ctx.strokeStyle = "blue";
@@ -169,5 +186,22 @@ const dibujarGrafico = () => {
     }
     ctx.stroke();
     ctx.closePath();
+
+    ctx.fillStyle = "red";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    const ordenada = b;
+    if (ordenada >= minY && ordenada <= maxY) {
+        const yCanvas = ymax - (ordenada - minY) * escalaY;
+        ctx.fillText(`(0, ${ordenada.toFixed(1)})`, xmax / 2 + 40, yCanvas);
+    }
+
+    const raiz = -b / a;
+    if (raiz >= minX && raiz <= maxX) {
+        const xCanvas = (raiz - minX) * escalaX;
+        ctx.fillText(`(${raiz.toFixed(1)}, 0)`, xCanvas, ymax / 2 - 20);
+    }
 }
+
 
