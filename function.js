@@ -19,13 +19,8 @@ const validar = () => {
         alert("Los valores ingresados deben estar dentro del rango");
         document.getElementById("a").value = "";
         document.getElementById("b").value = "";
-        document.getElementById("calcular").style.display = "none";
         return false;
     }
-    if (numA >= -10) {
-        document.getElementById("calcular").style.display = "inline-block";
-    }
-
     guardarValores();
     return true;
 }
@@ -91,7 +86,6 @@ window.onload = mostrarResultados;
  * dibuja la cuadricula del canvas y los ejes cartesianos una vez presionado el botón
  * @method dibujarCuadriculado
  */
-
 let dibujarCuadriculado = () => {
     const canvas = document.getElementById("canvas")
     const ctx = canvas.getContext("2d")
