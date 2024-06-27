@@ -29,15 +29,15 @@ https://ucc-labcompu2.github.io/proyecto2024-garcia-villanueva-godino/
 | 2320413@ucc.edu.ar | Andrés |
 
 ## Descripción
+
 ### Descripción de la página
 - Graph Wave le permite ingresar al usuario los términos que acompañan las variables de una función y la página principalmente le proporcionará su gráfico correspondiente. 
-
-- En la página se encuentra un ejemplo de como se vería antes de aprender Java Script
 
 ## Uso
 - En Graph Wave se le va a pedir al usuario que ingrese los términos que acompañan a las variables de su función, tanto en R2 como en R3, a partir de los cuales la página le mostrará las raíces, la ordenada al origen y el gráfico correspondiente a la función ingresada. 
  
 ## Tecnologías
+
 ### Tecnologías empleadas
 Para el desarrollo de la pagina utilizamos: 
 
