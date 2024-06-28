@@ -1,27 +1,38 @@
 /**
- * validar la entrada de valores antes de calcular 
- * @method validar
- * @returns valor de tipo bool
- */
+* validar la entrada de valores antes de calcular 
+* @method validar
+* @returns valor de tipo bool
+*/
 const validar = () => {
     const a = document.getElementById("a").value;
     const b = document.getElementById("b").value;
 
-    if (a === "" || b === "") {
+    if (a === "") {
         alert("Todos los campos deben estar completados");
+        document.getElementById("a").value = "";
         return false;
     }
 
-    const numA = parseFloat(a);
-    const numB = parseFloat(b);
+    if (b === ""){
+        alert("Todos los campos deben estar completados");
+        document.getElementById("b").value = "";
+    }
 
-    if (numA < -10 || numA > 10 || numB < -10 || numB > 10) {
+    if (numA < -10 || numA > 10 ){
         alert("Los valores ingresados deben estar dentro del rango");
         document.getElementById("a").value = "";
+        return false;
+    }
+
+    if (numB < -10 || numB > 10 ){
+        alert("Los valores ingresados deben estar dentro del rango");
         document.getElementById("b").value = "";
         return false;
     }
+
+
     guardarValores();
+    window.location.href = 'calculo.html';
     return true;
 }
 
@@ -174,21 +185,21 @@ const dibujarGrafico = () => {
     ctx.closePath();
 
     const raiz = -b / a;
-    const ordenada = b;      
+    const ordenada = b;
 
     ctx.fillStyle = "black";
 
-        const xCanvas = (raiz - minX) * escalaX;
-        ctx.beginPath();
-        ctx.arc(xCanvas, ymax / 2, 5, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.closePath();
+    const xCanvas = (raiz - minX) * escalaX;
+    ctx.beginPath();
+    ctx.arc(xCanvas, ymax / 2, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
 
-        const yCanvas = ymax - (ordenada - minY) * escalaY;
-        ctx.beginPath();
-        ctx.arc(xmax / 2, yCanvas, 5, 0, 2 * Math.PI);
-        ctx.fill();
-        ctx.closePath();
+    const yCanvas = ymax - (ordenada - minY) * escalaY;
+    ctx.beginPath();
+    ctx.arc(xmax / 2, yCanvas, 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.closePath();
 
 }
 
