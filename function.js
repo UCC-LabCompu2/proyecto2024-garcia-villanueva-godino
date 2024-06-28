@@ -135,6 +135,7 @@ let dibujarCuadriculado = () => {
 
 }
 
+
 /**
  * dibuja el grafico de la funcion correspondiete a los datos ingresados por el usuario
  * @method dibujarGrafico

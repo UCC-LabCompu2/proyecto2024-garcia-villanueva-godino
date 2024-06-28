@@ -13,7 +13,7 @@
     <title>Graph Wave</title>
 </head>
 
-<body onload="mostrarResultados()">
+<body onload="mostrarResultados(); dibujarGrafico()">
     <header>
         <h1>GRAPH WAVE</h1>
     </header>
@@ -28,8 +28,7 @@
         </div>
         <p id="grafico">Gráfico de la función f(x)</p>
         <section>
-            <button onclick="dibujarGrafico()" id="boton_canvas">dibujar grafico</button>
-            <canvas id="canvas" width="1000px" height="600px"></canvas>
+            <canvas id="canvas" width="1000px" height="600px" onload="dibujarGrafico()"></canvas>
         </section>
         <div class="boton_calculo">
             <a href="principal.html" class="boton">Atrás</a>
@@ -40,3 +39,6 @@
         <p>Eugenia Godino</p>
         <p>Andres Garcia Villanueva</p>
     </footer>
+</body>
+
+</html>
