@@ -1,43 +1,42 @@
 /**
-* validar la entrada de valores antes de calcular 
-* @method validar
-* @returns valor de tipo bool
-*/
-const validar = () => {
+ * Validar la entrada de valores antes de calcular 
+ * @method validar
+ * @returns {boolean} - true si los valores son válidos, false en caso contrario
+ */
+const validarYguardar = () => {
+    guardarValores();
     const a = document.getElementById("a").value;
     const b = document.getElementById("b").value;
+    const numA = parseFloat(a);
+    const numB = parseFloat(b);
 
     if (a === "") {
         alert("Todos los campos deben estar completados");
         document.getElementById("a").value = "";
         return false;
-    }
-
-    if (b === ""){
+    } 
+    if (b === "") {
         alert("Todos los campos deben estar completados");
         document.getElementById("b").value = "";
-    }
-
-    if (numA < -10 || numA > 10 ){
-        alert("Los valores ingresados deben estar dentro del rango");
+        return false;
+    } 
+    if (numA < -10 || numA > 10) {
+        alert("Deben estar dentro del rango -10 a 10");
         document.getElementById("a").value = "";
         return false;
-    }
-
-    if (numB < -10 || numB > 10 ){
-        alert("Los valores ingresados deben estar dentro del rango");
+    } 
+    if (numB < -10 || numB > 10) {
+        alert("Deben estar dentro del rango -10 a 10");
         document.getElementById("b").value = "";
         return false;
-    }
-
-
-    guardarValores();
-    window.location.href = 'calculo.html';
+    } 
+    window.location.href = "calculo.html"
     return true;
+    
 }
 
 /**
- * guardar los valores ingresados por el usuario una vez ya validados
+ * Guardar los valores ingresados por el usuario una vez ya validados
  * @method guardarValores
  */
 const guardarValores = () => {
@@ -45,12 +44,10 @@ const guardarValores = () => {
     const b = document.getElementById('b').value;
     localStorage.setItem('a', a);
     localStorage.setItem('b', b);
-
-    window.onload = guardarValores();
 }
 
 /**
- * retoma los valores ingresados por el usuario y accede a los calculos
+ * Retomar los valores ingresados por el usuario y acceder a los cálculos
  * @method mostrarResultados
  */
 const mostrarResultados = () => {
@@ -68,8 +65,8 @@ const mostrarResultados = () => {
     if (a === 0) {
         document.getElementById("raiz").textContent = "no tiene raiz";
     }
-
 }
+
 
 /**
  * calcular la ordenada al origen
