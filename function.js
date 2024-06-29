@@ -1,4 +1,9 @@
-const validarYContinuar = () => {
+/**
+ * Validar que el usuario haya completado todos los campos del formulario antes de continuar
+ * @method validarYContinuar
+ * @returns {boolean} - true si el form esta completado correctamente
+ */
+const validarYContinuar = () => { ol
     const nombre = document.getElementById("nombre").value.trim();
     const profesion = document.querySelector('input[name="profesion"]:checked');
 
@@ -16,11 +21,9 @@ const validarYContinuar = () => {
     return true;
 };
 
-
-
 /**
  * Validar la entrada de valores antes de calcular y guardar valores si estos son correctos 
- * @method validar
+ * @method validarYguardar
  * @returns {boolean} - true si los valores son válidos, false en caso contrario
  */
 const validarYguardar = () => {
