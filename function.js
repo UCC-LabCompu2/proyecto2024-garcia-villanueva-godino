@@ -3,7 +3,7 @@
  * @method validarYContinuar
  * @returns {boolean} - true si el form esta completado correctamente
  */
-const validarYContinuar = () => { ol
+const validarYContinuar = () => { 
     const nombre = document.getElementById("nombre").value.trim();
     const profesion = document.querySelector('input[name="profesion"]:checked');
 
@@ -112,53 +112,113 @@ const calcularRaiz = (a, b) => {
 window.onload = mostrarResultados;
 
 /**
- * dibuja la cuadricula del canvas y los ejes cartesianos cuando la pagina cargue
+ * Dibuja la cuadrícula del canvas y los ejes cartesianos cuando la página cargue.
  * @method dibujarCuadriculado
+ * @param {number} xmax ancho maximo del canvas
+ * @param {number} ymax altura maxima del canvas
+ * @param {number} paso distancia entre las linas del cuadriculado
  */
-let dibujarCuadriculado = () => {
-    const canvas = document.getElementById("canvas")
-    const ctx = canvas.getContext("2d")
+const dibujarCuadriculado = (ctx, xmax, ymax, paso) => {
+    ctx.strokeStyle = "#bbb9b9";
+    ctx.lineWidth = 1;
 
-    const xmax = canvas.width
-    const ymax = canvas.height
-    const paso = 80
-
-    ctx.strokeStyle = "#bbb9b9"
-
+    // Líneas horizontales
     for (let i = paso; i < ymax; i += paso) {
-        ctx.beginPath()
-        ctx.moveTo(0, i)
-        ctx.lineTo(xmax, i)
-        ctx.stroke()
-        ctx.closePath()
+        ctx.beginPath();
+        ctx.moveTo(0, i);
+        ctx.lineTo(xmax, i);
+        ctx.stroke();
+        ctx.closePath();
     }
 
+    // Líneas verticales
     for (let i = paso; i < xmax; i += paso) {
-        ctx.beginPath()
-        ctx.moveTo(i, 0)
-        ctx.lineTo(i, ymax)
-        ctx.stroke()
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, ymax);
+        ctx.stroke();
+        ctx.closePath();
     }
 
-    ctx.beginPath()
-    ctx.moveTo(0, ymax / 2)
-    ctx.lineTo(xmax, ymax / 2)
-    ctx.strokeStyle = "#000000"
-    ctx.stroke()
-    ctx.closePath()
+    // Eje X
+    ctx.beginPath();
+    ctx.moveTo(0, ymax / 2);
+    ctx.lineTo(xmax, ymax / 2);
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
 
-    ctx.beginPath()
-    ctx.moveTo(xmax / 2, 0)
-    ctx.lineTo(xmax / 2, ymax)
-    ctx.strokeStyle = "#000000"
-    ctx.stroke()
-    ctx.closePath()
+    // Eje Y
+    ctx.beginPath();
+    ctx.moveTo(xmax / 2, 0);
+    ctx.lineTo(xmax / 2, ymax);
+    ctx.strokeStyle = "#000000";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.closePath();
 
-}
+    // Números en el eje X
+    ctx.fillStyle = "#000000";
+    ctx.font = "12px Arial";
+    ctx.textAlign = "center";
+    for (let xi = -10; xi <= 10; xi++) {
+        const xCanvas = (xmax / 2) + xi * paso;
+        const yText = ymax / 2 + 15;
+        ctx.fillText(xi.toString(), xCanvas, yText);
+    }
 
+    // Números en el eje Y
+    for (let yi = -10; yi <= 10; yi++) {
+        const yCanvas = (ymax / 2) - yi * paso;
+        const xText = xmax / 2 - 15;
+        ctx.fillText(yi.toString(), xText, yCanvas);
+    }
+};
 
 /**
- * dibuja el grafico de la funcion correspondiete a los datos ingresados por el usuario cuando la pagina carga
+ * Realiza la animación progresiva del gráfico de una función en un canvas.
+ * @method animarGrafico
+ * @param {function} funcion - función a graficar
+ * @param {number} escalaX - escala en el eje X 
+ * @param {number} escalaY - escala en el eje Y 
+ * @param {number} minX - valor mínimo del eje X.
+ * @param {number} maxX - valor máximo del eje X.
+ * @param {number} ymax - altura máxima del canvas (eje Y).
+ * @param {number} paso - distancia entre líneas del cuadriculado.
+ */
+const animarGrafico = (ctx, funcion, escalaX, escalaY, minX, maxX, ymax, paso) => {
+    let x = minX;
+    const animacion = () => {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); 
+        dibujarCuadriculado(ctx, ctx.canvas.width, ctx.canvas.height, paso);
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        for (let xi = minX; xi <= x; xi += 0.1) {
+            const yi = funcion(xi);
+            const xCanvas = (xi - minX) * escalaX;
+            const yCanvas = ymax - (yi - minX) * escalaY;
+            if (xi === minX) {
+                ctx.moveTo(xCanvas, yCanvas);
+            } else {
+                ctx.lineTo(xCanvas, yCanvas);
+            }
+        }
+        ctx.stroke();
+        ctx.closePath();
+
+        x += 0.1; 
+
+        if (x <= maxX) {
+            requestAnimationFrame(animacion);
+        }
+    };
+    animacion();
+};
+
+/**
+ * Se encarga de mostrar todos los elementos del canvas y establece la escala del canvas.
  * @method dibujarGrafico
  */
 const dibujarGrafico = () => {
@@ -178,6 +238,7 @@ const dibujarGrafico = () => {
     const rangoX = maxX - minX;
     const rangoY = maxY - minY;
 
+    const paso = 40;
     const escalaX = xmax / rangoX;
     const escalaY = ymax / rangoY;
 
@@ -185,41 +246,11 @@ const dibujarGrafico = () => {
 
     ctx.clearRect(0, 0, xmax, ymax);
 
-    dibujarCuadriculado();
+    dibujarCuadriculado(ctx, xmax, ymax, paso);
 
-    ctx.strokeStyle = "blue";
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    for (let x = minX; x <= maxX; x += 0.1) {
-        const y = funcion(x);
-        const xCanvas = (x - minX) * escalaX;
-        const yCanvas = ymax - (y - minY) * escalaY;
-        if (x === minX) {
-            ctx.moveTo(xCanvas, yCanvas);
-        } else {
-            ctx.lineTo(xCanvas, yCanvas);
-        }
-    }
-    ctx.stroke();
-    ctx.closePath();
-
-    const raiz = -b / a;
-    const ordenada = b;
-
-    ctx.fillStyle = "black";
-
-    const xCanvas = (raiz - minX) * escalaX;
-    ctx.beginPath();
-    ctx.arc(xCanvas, ymax / 2, 5, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.closePath();
-
-    const yCanvas = ymax - (ordenada - minY) * escalaY;
-    ctx.beginPath();
-    ctx.arc(xmax / 2, yCanvas, 5, 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.closePath();
-
+    animarGrafico(ctx, funcion, escalaX, escalaY, minX, maxX, ymax, paso);
 }
+
+
 
 
