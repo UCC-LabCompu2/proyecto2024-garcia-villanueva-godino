@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta content="Eugenia Godino" name="author">
@@ -9,10 +8,9 @@
     <meta content="grafico de funciones con valores ingresados por el usuario" name="description">
     <link rel="shortcut icon" href="imagenes/favicon1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css" type="text/css">
-
+    <script type="text/javascript" src="function.js"></script>
     <title>Graph Wave</title>
 </head>
-
 <body>
     <header>
         <h1>GRAPH WAVE</h1>
@@ -22,18 +20,16 @@
         <h2>Antes de comenzar, necesitamos algunos datos</h2>
         <form name="formulario de Inscripcion" id="formulario">
             <div>
-                <label for="nombre"></label>
+                <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" id="nombre" placeholder="nombre" size="10" maxlength="20">
             </div>
             <div>
-                <p>profesión</p>
-                <label for="profesor">profesor</label><input type="radio" name="profesion" value="profesor"
-                    id="profesor">
-                <label for="estudiante">estudiante</label><input type="radio" name="profesion" value="estudiante"
-                    id="estudiante">
+                <p>Profesión:</p>
+                <label for="profesor">Profesor</label><input type="radio" name="profesion" value="profesor" id="profesor">
+                <label for="estudiante">Estudiante</label><input type="radio" name="profesion" value="estudiante" id="estudiante">
             </div>
             <p id="muchas_gr">muchas gracias</p>
-            <a href="principal.html" target="_self" class="boton">continuar</a>
+            <button class="boton" type="button" onclick="validarYContinuar()">continuar</button>
         </form>
     </div>
     <footer>
@@ -41,5 +37,4 @@
         <p>Andres Garcia Villanueva</p>
     </footer>
 </body>
-
 </html>

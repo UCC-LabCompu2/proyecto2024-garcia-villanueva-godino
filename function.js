@@ -1,14 +1,31 @@
+const validarYContinuar = () => {
+    const nombre = document.getElementById("nombre").value.trim();
+    const profesion = document.querySelector('input[name="profesion"]:checked');
+
+    if (nombre === "" || !profesion) {
+        alert ("Por favor complete todos los campos")
+        return false;
+    }
+
+    if (/\d/.test(nombre)) {
+        alert ("El nombre no puede contener numeros. Inténtelo de nuevo")
+        document.getElementById("nombre").value = "";
+        return false;
+    }
+    window.location.href = "principal.html";
+    return true;
+};
+
+
+
 /**
- * Validar la entrada de valores antes de calcular 
+ * Validar la entrada de valores antes de calcular y guardar valores si estos son correctos 
  * @method validar
  * @returns {boolean} - true si los valores son válidos, false en caso contrario
  */
 const validarYguardar = () => {
-    guardarValores();
     const a = document.getElementById("a").value;
     const b = document.getElementById("b").value;
-    const numA = parseFloat(a);
-    const numB = parseFloat(b);
 
     if (a === "") {
         alert("Todos los campos deben estar completados");
@@ -20,17 +37,18 @@ const validarYguardar = () => {
         document.getElementById("b").value = "";
         return false;
     } 
-    if (numA < -10 || numA > 10) {
-        alert("Deben estar dentro del rango -10 a 10");
+    if (a < -10 || a > 10) {
+        alert("El valor debe estar dentro del rango -10 a 10");
         document.getElementById("a").value = "";
         return false;
     } 
-    if (numB < -10 || numB > 10) {
-        alert("Deben estar dentro del rango -10 a 10");
+    if (b < -10 || b > 10) {
+        alert("El valor debe estar dentro del rango -10 a 10");
         document.getElementById("b").value = "";
         return false;
     } 
-    window.location.href = "calculo.html"
+    guardarValores();
+    window.location.href = "calculo.html";
     return true;
     
 }
@@ -91,7 +109,7 @@ const calcularRaiz = (a, b) => {
 window.onload = mostrarResultados;
 
 /**
- * dibuja la cuadricula del canvas y los ejes cartesianos una vez presionado el botón
+ * dibuja la cuadricula del canvas y los ejes cartesianos cuando la pagina cargue
  * @method dibujarCuadriculado
  */
 let dibujarCuadriculado = () => {
@@ -137,7 +155,7 @@ let dibujarCuadriculado = () => {
 
 
 /**
- * dibuja el grafico de la funcion correspondiete a los datos ingresados por el usuario
+ * dibuja el grafico de la funcion correspondiete a los datos ingresados por el usuario cuando la pagina carga
  * @method dibujarGrafico
  */
 const dibujarGrafico = () => {
