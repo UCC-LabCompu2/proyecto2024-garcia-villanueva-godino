@@ -74,8 +74,8 @@ const guardarValores = () => {
 const mostrarResultados = () => {
     const a = parseFloat(localStorage.getItem('a'));
     const b = parseFloat(localStorage.getItem('b'));
-    document.getElementById('pendiente').textContent = a;
-    document.getElementById('termino_independiente').textContent = b;
+    document.getElementById('pendiente').textContent = a.toString();
+    document.getElementById('termino_independiente').textContent = b.toString();
 
     const ordenada = calcularOrdenada(b);
     document.getElementById('ordenada').textContent = ordenada;
@@ -109,7 +109,6 @@ const calcularRaiz = (a, b) => {
     return -b / a;
 }
 
-window.onload = mostrarResultados;
 
 /**
  * Dibuja la cuadrícula del canvas y los ejes cartesianos cuando la página cargue.
