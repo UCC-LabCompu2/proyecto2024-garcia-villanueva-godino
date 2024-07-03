@@ -3,43 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta content="Eugenia Godino" name="author">
-    <meta content="Andres Garcia Villanueva" name="author">
-    <meta content="html, css, grafica, analisis matematico, funciones" name="keywords">
-    <meta content="grafico de funciones con valores ingresados por el usuario" name="description">
+    <meta name="author" content="Eugenia Godino">
+    <meta name="author" content="Andres Garcia Villanueva">
+    <meta name="keywords" content="html, css, grafica, analisis matematico, funciones">
+    <meta name="description" content="Gráfico de funciones con valores ingresados por el usuario">
     <link rel="shortcut icon" href="imagenes/favicon1.jpg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="function.js"></script>
+    <script src="function.js" type="text/javascript"></script>
     <title>Graph Wave</title>
 </head>
 
 <body onload="mostrarResultados(); dibujarGrafico()">
 <header>
-    <h1> GRAPH WAVE </h1>
+    <h1>GRAPH WAVE</h1>
 </header>
 <div class="calculo">
     <div class="estilo">
         <ul>
-            <li> Resultados </li>
-            <li> f(x) = <span id="pendiente"></span> x + <span id="termino_independiente"></span> </li>
-            <li> Raíz: <span id="raiz"></span> </li>
-            <li> Ordenada al origen: <span id="ordenada"></span> </li>
+            <li>Resultados</li>
+            <li>f(x) = <span id="pendiente"></span> x + <span id="termino_independiente"></span></li>
+            <li>Raíz: <span id="raiz"></span></li>
+            <li>Ordenada al origen: <span id="ordenada"></span></li>
         </ul>
     </div>
-    <p id="grafico"> Gráfico de la función f(x) </p>
+    <p id="grafico">Gráfico de la función f(x)</p>
     <section>
         <canvas id="canvas" width="800" height="800" onload="dibujarGrafico()"></canvas>
     </section>
     <div class="boton_calculo">
-        <a href="principal.html" class="boton"> Atrás </a>
-        <a href="califica.html" class="boton" id="calcular"> Finalizar </a>
+        <a href="principal.html" class="boton">Atrás</a>
+        <a href="califica.html" class="boton" id="calcular">Finalizar</a>
     </div>
 </div>
 <footer>
-    <p> Eugenia Godino </p>
-    <p> Andrés García Villanueva </p>
+    <p>Eugenia Godino</p>
+    <p>Andrés García Villanueva</p>
 </footer>
 </body>
 
 </html>
+
 
