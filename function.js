@@ -78,10 +78,10 @@ const mostrarResultados = () => {
     document.getElementById('termino_independiente').textContent = b.toString();
 
     const ordenada = calcularOrdenada(b);
-    document.getElementById('ordenada').textContent = ordenada;
+    document.getElementById('ordenada').textContent = ordenada.toString();
 
     const raiz = calcularRaiz(a, b);
-    document.getElementById('raiz').textContent = raiz;
+    document.getElementById('raiz').textContent = raiz.toString();
 
     if (a === 0) {
         document.getElementById("raiz").textContent = "no tiene raiz";
@@ -113,6 +113,7 @@ const calcularRaiz = (a, b) => {
 /**
  * Dibuja la cuadrícula del canvas y los ejes cartesianos cuando la página cargue.
  * @method dibujarCuadriculado
+ * @param {object} ctx
  * @param {number} xmax ancho maximo del canvas
  * @param {number} ymax altura maxima del canvas
  * @param {number} paso distancia entre las linas del cuadriculado
@@ -178,6 +179,7 @@ const dibujarCuadriculado = (ctx, xmax, ymax, paso) => {
 /**
  * Realiza la animación progresiva del gráfico de una función en un canvas.
  * @method animarGrafico
+ * @param {object} ctx
  * @param {function} funcion - función a graficar
  * @param {number} escalaX - escala en el eje X
  * @param {number} escalaY - escala en el eje Y
