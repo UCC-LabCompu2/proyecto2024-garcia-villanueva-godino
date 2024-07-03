@@ -3,17 +3,17 @@
  * @method validarYContinuar
  * @returns {boolean} - true si el form esta completado correctamente
  */
-const validarYContinuar = () => { 
+const validarYContinuar = () => {
     const nombre = document.getElementById("nombre").value.trim();
     const profesion = document.querySelector('input[name="profesion"]:checked');
 
     if (nombre === "" || !profesion) {
-        alert ("Por favor complete todos los campos")
+        alert("Por favor complete todos los campos")
         return false;
     }
 
     if (/\d/.test(nombre)) {
-        alert ("El nombre no puede contener numeros. Inténtelo de nuevo")
+        alert("El nombre no puede contener numeros. Inténtelo de nuevo")
         document.getElementById("nombre").value = "";
         return false;
     }
@@ -22,7 +22,7 @@ const validarYContinuar = () => {
 };
 
 /**
- * Validar la entrada de valores antes de calcular y guardar valores si estos son correctos 
+ * Validar la entrada de valores antes de calcular y guardar valores si estos son correctos
  * @method validarYguardar
  * @returns {boolean} - true si los valores son válidos, false en caso contrario
  */
@@ -34,26 +34,26 @@ const validarYguardar = () => {
         alert("Todos los campos deben estar completados");
         document.getElementById("a").value = "";
         return false;
-    } 
+    }
     if (b === "") {
         alert("Todos los campos deben estar completados");
         document.getElementById("b").value = "";
         return false;
-    } 
+    }
     if (a < -10 || a > 10) {
         alert("El valor debe estar dentro del rango -10 a 10");
         document.getElementById("a").value = "";
         return false;
-    } 
+    }
     if (b < -10 || b > 10) {
         alert("El valor debe estar dentro del rango -10 a 10");
         document.getElementById("b").value = "";
         return false;
-    } 
+    }
     guardarValores();
     window.location.href = "calculo.html";
     return true;
-    
+
 }
 
 /**
@@ -179,8 +179,8 @@ const dibujarCuadriculado = (ctx, xmax, ymax, paso) => {
  * Realiza la animación progresiva del gráfico de una función en un canvas.
  * @method animarGrafico
  * @param {function} funcion - función a graficar
- * @param {number} escalaX - escala en el eje X 
- * @param {number} escalaY - escala en el eje Y 
+ * @param {number} escalaX - escala en el eje X
+ * @param {number} escalaY - escala en el eje Y
  * @param {number} minX - valor mínimo del eje X.
  * @param {number} maxX - valor máximo del eje X.
  * @param {number} ymax - altura máxima del canvas (eje Y).
@@ -189,7 +189,7 @@ const dibujarCuadriculado = (ctx, xmax, ymax, paso) => {
 const animarGrafico = (ctx, funcion, escalaX, escalaY, minX, maxX, ymax, paso) => {
     let x = minX;
     const animacion = () => {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); 
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         dibujarCuadriculado(ctx, ctx.canvas.width, ctx.canvas.height, paso);
         ctx.strokeStyle = "blue";
         ctx.lineWidth = 2;
@@ -207,7 +207,7 @@ const animarGrafico = (ctx, funcion, escalaX, escalaY, minX, maxX, ymax, paso) =
         ctx.stroke();
         ctx.closePath();
 
-        x += 0.1; 
+        x += 0.1;
 
         if (x <= maxX) {
             requestAnimationFrame(animacion);
